@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import ContentForm from './components/ContentForm'
+import ResultBox from './components/ResultBox'
 import styles from './App.module.css'
 
 function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark'
   })
+  const [result, setResult] = useState('')
 
   useEffect(() => {
     document.body.className = theme
@@ -26,7 +28,19 @@ function App() {
       tone: formData.get('tone'),
     }
 
-    console.log('داده‌های فرم:', data)
+    // فعلاً یک متن آزمایشی نشان می‌دهیم
+    const fakeResult = `موضوع: ${data.topic}
+نوع محتوا: ${data.type}
+لحن: ${data.tone}
+
+این یک متن آزمایشی است. در مرحله بعد به هوش مصنوعی وصل می‌شویم تا محتوای واقعی تولید شود.`
+
+    setResult(fakeResult)
+  }
+
+  function handleCopy() {
+    navigator.clipboard.writeText(result)
+    alert('متن کپی شد')
   }
 
   return (
@@ -38,7 +52,9 @@ function App() {
       </div>
 
       <h1>تولید محتوا با هوش مصنوعی</h1>
+      
       <ContentForm onGenerate={handleGenerate} />
+      <ResultBox content={result} onCopy={handleCopy} />
     </div>
   )
 }
