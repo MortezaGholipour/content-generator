@@ -1,16 +1,58 @@
-# React + Vite
+<div dir="rtl">
+# Content Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ابزار تولید محتوا با هوش مصنوعی
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## هدف پروژه
 
-## React Compiler
+ساخت یک ابزار تحت وب برای تولید محتوا (کپشن اینستاگرام، پست لینکدین، ایده‌ی ریلز و ...) با استفاده از مدل‌های زبانی.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## قابلیت‌های نسخه اول
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- دریافت موضوع، نوع محتوا و لحن از کاربر
+- تولید محتوا با استفاده از هوش مصنوعی
+- امکان کپی کردن متن تولید شده
+- پشتیبانی از حالت تاریک و روشن
+- طراحی ساده و تمیز
+
+---
+
+## تکنولوژی‌ها
+
+- **Frontend:** React + Vite
+- **Styling:** CSS Modules
+- **AI Model:** Groq (Llama 3.1 / 3.3)
+- **API:** REST
+
+---
+
+## معماری ساده
+
+کاربر → فرم → ساخت پرامپت → ارسال به API → دریافت پاسخ → نمایش نتیجه
+
+---
+
+## وضعیت فعلی
+
+- [x] ساخت رابط کاربری
+- [x] فرم ورودی
+- [x] نمایش نتیجه
+- [x] حالت تاریک/روشن
+- [ ] اتصال به API هوش مصنوعی
+- [ ] مدیریت خطا و لودینگ
+- [ ] دیپلوی نهایی
+
+---
+
+## نحوه اجرا
+
+```bash
+npm install
+npm run dev
+
+
+</div>
